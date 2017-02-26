@@ -3,8 +3,8 @@ MAINTAINER mwaeckerlin
 ENV TERM "xterm"
 ENV LANG "en_US.UTF-8"
 
-ENV PATH "/data"
-ENV THUMBS "/var/tmp/thumbnails"
+ENV IMAGEPATH "/data"
+ENV THUMBPATH "/var/tmp/thumbnails"
 ENV MAX_VALIDITY_DAYS "30"
 
 ENV REALM "Authentication Needed"

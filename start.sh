@@ -10,8 +10,8 @@ function setvar() {
     sed -i 's/^ *\$'${1,,}' *= *"\(.*\)" *;/'${1,,}' = "'${!1}'";/' /etc/${2}.php
 }
 
-setvar PATH settings
-setvar THUMBS settings
+setvar IMAGEPATH settings
+setvar THUMBPATH settings
 setvar MAX_VALIDITY_DAYS settings
 
 setvar REALM authentication
