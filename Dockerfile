@@ -26,4 +26,4 @@ VOLUME /usr/share/sharing-gallery/html
 VOLUME /usr/share/nginx/html
 
 ADD start.sh /start.sh
-CMD /start.sh
+ENTRYPOINT ["/start.sh"]
