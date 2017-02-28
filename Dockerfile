@@ -9,19 +9,24 @@ ENV MAX_VALIDITY_DAYS "30"
 
 ENV REALM "Authentication Needed"
 ENV LDAPHOST "ldap"
+ENV LDAPTLS "yes"
 ENV LDAPBASE ""
+ENV CHECKUSER "cn"
+ENV FONT "DejaVu-Sans"
+ENV PREVIEW_NUM "5"
 
 RUN apt-get update
 RUN apt-get install -y language-pack-en wget software-properties-common apt-transport-https
 RUN apt-add-repository https://dev.marc.waeckerlin.org/repository
 RUN wget -O- https://dev.marc.waeckerlin.org/repository/PublicKey | apt-key add -
-RUN apt-get update -y
-RUN apt-get install sharing-gallery
+RUN apt-get update
+RUN apt-get install -y pwgen sharing-gallery
 
 RUN mkdir -p /usr/share/nginx
 RUN ln -s /usr/share/sharing-gallery/html /usr/share/nginx/html
 
 # Just provide /usr/share/sharing-gallery/html
+VOLUME /etc/sharing-gallery
 VOLUME /usr/share/sharing-gallery/html
 VOLUME /usr/share/nginx/html
 
