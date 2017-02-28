@@ -27,5 +27,4 @@ setvar LDAPTLS authentication
 setvar LDAPBASE authentication
 setvar CHECKUSER authentication
 
-sleep infinity
-
+/start.php-fpm.sh
