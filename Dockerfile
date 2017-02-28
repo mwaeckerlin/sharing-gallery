@@ -4,24 +4,24 @@ MAINTAINER mwaeckerlin
 ENV IMAGEPATH "/data"
 ENV THUMBPATH "/var/tmp/thumbnails"
 ENV MAX_VALIDITY_DAYS "30"
+ENV FONT "DejaVu-Sans"
+ENV PREVIEW_NUM "5"
+ENV DEFAULT_MAIL_SUBJECT "Sharing Gallery: See my Fotos"
+ENV DEFAULT_MAIL_TEXT "Fotos from my gallery:\n\npassword = PASSWORD\n\nlink: LINK\n\nRegards\nUSERNAME"
+ENV DEFAULT_MAILTO ""
+ENV FALLBACK_MAIL_REPLYTO ""
+
 
 ENV REALM "Authentication Needed"
 ENV LDAPHOST "ldap"
 ENV LDAPTLS "yes"
 ENV LDAPBASE ""
 ENV CHECKUSER "cn"
-ENV FONT "DejaVu-Sans"
-ENV PREVIEW_NUM "5"
+
+ENV WEB_ROOT_PATH "/usr/share/sharing-gallery/html"
+VOLUME ${WEB_ROOT_PATH}
 
 RUN apt-get update && apt-get install -y pwgen sharing-gallery
-
-RUN mkdir -p /usr/share/nginx
-RUN ln -s /usr/share/sharing-gallery/html /usr/share/nginx/html
-
-# Just provide /usr/share/sharing-gallery/html
-VOLUME /etc/sharing-gallery
-VOLUME /usr/share/sharing-gallery/html
-VOLUME /usr/share/nginx/html
 
 ADD start.sh /start.sh
 CMD /start.sh

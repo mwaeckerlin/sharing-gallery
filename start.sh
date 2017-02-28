@@ -4,10 +4,6 @@
 # $2: file name
 function setvar() {
     value="${!1}"
-    if test -z "$value"; then
-	echo "**** ERROR: please specify -e '${1}=...'" 1>&2
-	exit 1
-    fi
     sed -i 's/^ *\$'"${1,,}"' *= *"\(.*\)" *;/\$'"${1,,}"' = "'"${value//\//\\/}"'";/' /etc/sharing-gallery/${2}.php
 }
 
@@ -20,6 +16,10 @@ setvar THUMBPATH settings
 setvar MAX_VALIDITY_DAYS settings
 setvar FONT settings
 setvar PREVIEW_NUM settings
+setvar DEFAULT_MAIL_SUBJECT settings
+setvar DEFAULT_MAIL_TEXT settings
+setvar DEFAULT_MAILTO settings
+setvar FALLBACK_MAIL_REPLYTO settings
 
 setvar REALM authentication
 setvar LDAPHOST authentication
