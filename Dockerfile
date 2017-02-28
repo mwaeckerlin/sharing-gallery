@@ -21,7 +21,7 @@ ENV CHECKUSER "cn"
 ENV WEB_ROOT_PATH "/usr/share/sharing-gallery/html"
 VOLUME ${WEB_ROOT_PATH}
 
-RUN apt-get update && apt-get install -y pwgen sharing-gallery
+RUN apt-get update && apt-get install -y pwgen sharing-gallery sendmail
 
 ADD start.sh /start.sh
 CMD /start.sh
