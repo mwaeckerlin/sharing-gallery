@@ -19,9 +19,10 @@ ENV LDAPBASE ""
 ENV CHECKUSER "cn"
 
 ENV WEB_ROOT_PATH "/usr/share/sharing-gallery/html"
-VOLUME ${WEB_ROOT_PATH}
 
-RUN apt-get update && apt-get install -y pwgen sharing-gallery sendmail
+RUN apt-get update && apt-get install -y pwgen sharing-gallery postfix
 
 ADD start.sh /start.sh
 CMD /start.sh
+
+VOLUME ${WEB_ROOT_PATH}
