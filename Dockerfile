@@ -7,7 +7,7 @@ ENV MAX_VALIDITY_DAYS "30"
 ENV FONT "DejaVu-Sans"
 ENV PREVIEW_NUM "5"
 ENV DEFAULT_MAIL_SUBJECT "Sharing Gallery: See my Fotos"
-ENV DEFAULT_MAIL_TEXT "Fotos from my gallery:\n\npassword = PASSWORD\n\nlink: LINK\n\nRegards\nUSERNAME"
+ENV DEFAULT_MAIL_TEXT "Fotos from my gallery, please follow the link:\n\npassword: PASSWORD\n\nlink:\nLINK\n\nRegards\nUSERNAME";
 ENV DEFAULT_MAILTO ""
 ENV FALLBACK_MAIL_REPLYTO ""
 
