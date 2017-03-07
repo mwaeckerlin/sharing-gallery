@@ -27,5 +27,4 @@ setvar LDAPTLS authentication
 setvar LDAPBASE authentication
 setvar CHECKUSER authentication
 
-/etc/init.d/postfix start
 /start.php-fpm.sh

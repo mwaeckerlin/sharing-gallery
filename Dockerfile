@@ -20,9 +20,10 @@ ENV CHECKUSER "cn"
 
 ENV WEB_ROOT_PATH "/usr/share/sharing-gallery/html"
 
-RUN apt-get update && apt-get install -y pwgen sharing-gallery postfix
+RUN apt-get update && apt-get install -y pwgen sharing-gallery exim4
 
 ADD start.sh /start.sh
 CMD /start.sh
 
+VOLUME /etc/sharing-gallery
 VOLUME ${WEB_ROOT_PATH}
